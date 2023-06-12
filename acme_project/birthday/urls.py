@@ -6,7 +6,7 @@ app_name = 'birthday'
 
 urlpatterns = [
     path(
-        '',
+        'create/',
         views.BirthdayCreateView.as_view(),
         name='create',
     ),
@@ -19,6 +19,11 @@ urlpatterns = [
         '<int:pk>/',
         views.BirthdayDetailView.as_view(),
         name='detail',
+    ),
+    path(
+        '<int:pk>/comment/',
+        views.CongratulationCreateView.as_view(),
+        name='add_comment'
     ),
     path(
         '<int:pk>/edit/',
